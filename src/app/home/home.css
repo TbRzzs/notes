@@ -1,0 +1,83 @@
+.container-home {
+    margin-top: 80px;
+    display: flex;
+    gap: 6rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home {
+    flex: 1;
+    max-width: 600px;
+}
+
+.home h1 {
+    margin: 0 0 2rem 0;
+    font-size: 87px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    color: #11161b;
+    font-family: 'Inter', sans-serif;
+}
+
+.home p {
+    margin: 0 0 3rem 0;
+    font-size: 22px;
+    line-height: 1.7;
+    color: #6b7280;
+    font-family: 'Inter', sans-serif;
+    max-width: 90%;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.get-started-button {
+    background-color: #11161b;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+    background-color: #1f2937;
+}
+
+.simple-button {
+    background: none;
+    border: none;
+    color: #11161b;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    padding: 1rem 0;
+    transition: color 0.3s ease;
+}
+
+.simple-button:hover {
+    color: #6b7280;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: 650px;
+    object-fit: cover;
+}
