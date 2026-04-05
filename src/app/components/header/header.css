@@ -4,10 +4,63 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 1rem;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    gap: 1.5rem;
+    max-width: 1400px;
+}
 
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #11161b;
+}
+
+@media (max-width: 480px) {
+    .container-header {
+        padding: 0.85rem 0.75rem;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 3rem;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    padding: 0.25rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #11161b;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle span + span {
+    margin-top: 5px;
 }
 
 
@@ -15,6 +68,8 @@
 .list-header ul {
     display: flex;
     gap: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -53,6 +108,7 @@ a:hover::before {
 .start-buttons {
     display: flex;
     gap: 1rem;
+    margin-left: auto;
 }
 
 .sign-in-button {
@@ -76,4 +132,108 @@ a:hover::before {
 
 .get-started-button:hover {
     background-color: #151515;
+}
+
+@media (max-width: 900px) {
+    .container-header {
+        gap: 0.75rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+        width: 22px;
+        height: 2px;
+    }
+
+    .menu-toggle span + span {
+        margin-top: 4px;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .nav-wrapper {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        border-top: 1px solid #e5e7eb;
+        background-color: #fff;
+        animation: revealMenu 0.25s ease;
+        z-index: 999;
+    }
+
+    .nav-wrapper.open {
+        display: flex;
+    }
+
+    .list-header ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .list-header a {
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+    }
+
+    .start-buttons {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #e5e7eb;
+        margin-left: 0;
+        z-index: 998;
+    }
+
+    .start-buttons.open {
+        display: flex !important;
+    }
+
+    .sign-in-button,
+    .get-started-button {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        font-size: 0.95rem;
+    }
+}
+
+@keyframes revealMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

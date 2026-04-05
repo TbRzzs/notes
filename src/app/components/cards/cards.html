@@ -1,0 +1,16 @@
+<div class="container-cards">
+    <div class="titles">
+        <span class="plan-tag">{{ planTag }}</span>
+        <h2>{{ title }}</h2>
+        <p class="price">{{ price }} <small>{{ priceSuffix }}</small></p>
+    </div>
+
+    <div class="list-benefits">
+        <p *ngFor="let benefit of benefits">
+            <span class="checkmark">✓</span>
+            {{ benefit }}
+        </p>
+    </div>
+
+    <button class="get-started-button" type="button">{{ buttonLabel }}</button>
+</div>

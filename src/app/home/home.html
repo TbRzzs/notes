@@ -1,17 +1,43 @@
 <div class="container">
     <app-header></app-header>
-    <div class="container-home">
-        <div class="home">
-            <h1>The<br>Architecture of<br>Thought.</h1>
-            <p>A curated digital archive for your deepest ideas. Erase the noise. Organize your mind in a space designed for focus and longevity.</p>
-            <div class="button-group">
-                <button class="get-started-button">Start Curating</button>
-                <button class="simple-button">View Sample Archive</button>
+
+    <section id="home" class="section-block">
+        <div class="container-home">
+            <div class="home">
+                <h1>The<br>Architecture of<br>Thought.</h1>
+                <p>A curated digital archive for your deepest ideas. Erase the noise. Organize your mind in a space designed for focus and longevity.</p>
+                <div class="button-group">
+                    <button class="get-started-button">Start Curating</button>
+                    <button class="simple-button">View Sample Archive</button>
+                </div>
+            </div>
+
+            <div class="image">
+                <img src="/imagen.webp" alt="Architecture" />
             </div>
         </div>
+    </section>
 
-        <div class="image">
-            <img src="/imagen.webp" alt="Architecture" />
+    <section class="section-block features-container" id="features">
+        <app-features></app-features>
+    </section>
+
+    <section class="section-block info-section" id="pricing">
+        <div class="pricing-grid">
+            <app-cards
+                *ngFor="let card of pricingCards"
+                [planTag]="card.planTag"
+                [title]="card.title"
+                [price]="card.price"
+                [priceSuffix]="card.priceSuffix"
+                [benefits]="card.benefits"
+                [buttonLabel]="card.buttonLabel"
+            ></app-cards>
         </div>
-    </div>
+    </section>
+
+    <section class="section-block info-section" id="about">
+        <h2>About</h2>
+        <p>The Curator was designed to preserve meaningful ideas and remove digital noise, so your thinking stays clear and organized.</p>
+    </section>
 </div>
